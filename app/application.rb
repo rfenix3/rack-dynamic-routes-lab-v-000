@@ -5,7 +5,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path=="/items"
+    if req.path.match("/items/")
       binding.pry
       item_name = req.path.split("/items/").last #turn /items/Figs into Figs
             item = @@items.find{|s| s.name == item_name}
