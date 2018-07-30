@@ -1,4 +1,3 @@
-require 'pry'
 
 class Application
 
@@ -9,7 +8,6 @@ class Application
     if req.path=="/items/"
       item_name = req.path.split("/items/").last #turn /items/Figs into Figs
             item = @@items.find{|s| s.name == item_name}
-            binding.pry
             resp.write item.price
     else
       resp.write "Route not found"
