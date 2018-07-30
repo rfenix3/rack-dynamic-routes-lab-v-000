@@ -6,9 +6,8 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match("/items/")
-      #binding.pry
       item_name = req.path.split("/items/").last #turn /items/Figs into Figs
-        item = @@items.find{|s| s.name == item_name}
+      item = @@items.find{|s| s.name == item_name}
           if item.nil?
             resp.write "Item not found."
             resp.status = 200
