@@ -12,7 +12,7 @@ class Application
             bindning.pry
             resp.write item.price
             resp.status = 200
-            
+
     else
       resp.write "Route not found"
       resp.status = 404
