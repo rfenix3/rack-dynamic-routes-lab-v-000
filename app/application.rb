@@ -13,7 +13,7 @@ class Application
             resp.status = 200
           else
             item = @@items.find{|s| s.name == item_name}
-            binding.pry
+            #binding.pry
             resp.write item.price
             resp.status = 300
           end
