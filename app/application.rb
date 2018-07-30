@@ -8,14 +8,14 @@ class Application
     if req.path.match("/items/")
       item_name = req.path.split("/items/").last #turn /items/Figs into Figs
       item = @@items.find{|s| s.name == item_name}
-          if item.nil?
-            resp.write "Item not found."
-            resp.status = 200
-          else
-            #binding.pry
-            resp.write item.price
-            resp.status = 300
-          end
+      if item.nil?
+        resp.write "Item not found."
+        resp.status = 200
+      else
+        #binding.pry
+        resp.write item.price
+        resp.status = 300
+      end
     else
       resp.write "Route not found"
       resp.status = 404
